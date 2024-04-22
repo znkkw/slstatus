@@ -65,9 +65,14 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ netspeed_rx, " [%sB/s] ", "enp39s0"},
-	{ run_command, " [xmr: %s] ", "sb-crypto"},
-	{ cpu_perc, " [cpu: %s%%] ",  NULL},
-	{ ram_perc, " [ram: %s%%] ", NULL				 },
-	{datetime, " %s ",           "%a %d %b %r" },
+	/*{ netspeed_tx, "  [ %s B/s ] ","enp39s0" },
+	{ netspeed_rx, "  [ %s B/s ] ", "enp39s0"},*/
+	{ run_command, "[%s]",	"sb-traffic" },
+	{ run_command, "[%s]","sb-news" },
+	{ cpu_perc, "[cpu: %s%%]",  NULL},
+	{ temp, "[TEMP %sC]", "/sys/class/thermal/thermal_zone0/temp" },
+	{ ram_perc, "[ram: %s%%]", NULL				 },
+	{ run_command, "[%s%%]","sb-cast" },
+	{ datetime, "[%s]", "%a %b %I:%M" }
+	
 };
